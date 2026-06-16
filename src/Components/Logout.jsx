@@ -24,9 +24,9 @@ const Logout = () => {
       if (result.isConfirmed) {
         localStorage.clear()
         setUser(null)
-        navigate("/") // ✅ logout
+        navigate("/") 
       } else {
-        navigate("/dashboard") // ✅ go back if cancel
+        navigate("/dashboard") //go back if cancel
       }
 
     });

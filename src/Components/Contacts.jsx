@@ -46,27 +46,15 @@ const Contacts = () => {
   const columns = [
     {
   name: 'Name',
-  cell: (row) => (
+  cell: (row) => ( 
     <div style={{ display: "flex", alignItems: "center", gap: "15px" }}>
-      
-      <img
-        src={`https://api.dicebear.com/7.x/initials/svg?seed=${row.name}`}
-        alt="avatar"
-        style={{
-          width: "35px",
-          height: "35px",
-          borderRadius: "50%"
-        }}
-      />
-
-      <span onClick={() => setSelectedContact(row)}>
-        {row.name}
-      </span>
-
+      <img src={`https://api.dicebear.com/7.x/initials/svg?seed=${row.name}`} alt="avatar"
+        style={{width: "35px", height: "35px", borderRadius: "50%"}} />
+      <span onClick={() => setSelectedContact(row)}>{row.name}</span>
     </div>
   )
 },
-    {
+{
   name: 'Action',
   cell: (row) => (
     <div style={{ display: "flex", alignItems: "center", gap: "20px" }}>
@@ -75,7 +63,7 @@ const Contacts = () => {
     </div>
   )
 },
-  ];
+];
   useEffect(() => {if (selectedContact) {fetchNotes(selectedContact._id);}}, [selectedContact]);
   const fetchNotes = (contactId) => {
   const token = localStorage.getItem('token');
@@ -102,7 +90,6 @@ const handleAddNote = () => {
   });
 };
 
-
   useEffect(() => {
     const token = localStorage.getItem('token');
     if (!token) return;
@@ -125,6 +112,7 @@ const handleAddNote = () => {
               data={contacts}
               customStyles={customStyles}
               pagination
+              paginationDefaultPage={5} 
              paginationRowsPerPageOptions={[3,5,10,15,20,25,30]}/>
             {contacts.length === 0 && (<h3 style={{ textAlign: "center" }}>No contacts found. Add a contact.</h3>)}
           </div>
@@ -139,10 +127,7 @@ const handleAddNote = () => {
               <h4>Notes</h4>
               <input type="text" value={note} placeholder="Add note..." onChange={(e) => setNote(e.target.value)}/>
               <button onClick={handleAddNote}>Add Note</button>
-              <div>
-                  {notes.length > 0 ? ( notes.map((n, index) => ( <p key={index}>• {n.note}</p>))) : (<p>No notes added</p>)}
-              </div>
+              <div>{notes.length > 0 ? ( notes.map((n, index) => ( <p key={index}>• {n.note}</p>))) : (<p>No notes added</p>)}</div>
             </div>)}
-          </div>)}
-    </>);};
+          </div>)}</>);};
 export default Contacts;

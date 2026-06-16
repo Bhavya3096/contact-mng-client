@@ -21,23 +21,12 @@ const router = createBrowserRouter([
   { path: '/', element: <Home /> },
   { path: '/register', element: <Register /> },
   { path: '/login', element: <Login /> },
-  {path:'/dashboard',element:<ProtectedRoutes><Dashboard/></ProtectedRoutes>,
+  {path:'/dashboard',element:/*<ProtectedRoutes>*/<Dashboard/>/*</ProtectedRoutes>*/,
     children:[
-      {
-        index:true,
-        element:<Contacts/>
-      },
-      {
-        path:"/dashboard/add-contact",
-        element:<AddContact/>
-      },
-      {
-        path:"edit-contact/:id",
-        element:<EditContact/>
-      },
-      { path: "profile", element: <Profile /> }
-    ]
-  },
+      {index:true, element:<Contacts/>},
+      {path:"/dashboard/add-contact",element:<AddContact/>},
+      {path:"edit-contact/:id", element:<EditContact/>},
+      { path: "profile", element: <Profile /> }]},
   { path: '/contact/:id', element: <ContactCard /> },
   { path: '/logout', element: <Logout/> }
 ]);
