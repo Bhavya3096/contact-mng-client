@@ -1,16 +1,45 @@
-# React + Vite
+   **Contact Management Frontend**
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**📌 Project Overview:**
 
-Currently, two official plugins are available:
+It is a web-based user interface designed to manage contact information. It allows users to perform **CRUD operations (Create, Read, Update, Delete) on contacts** through an intuitive and responsive interface.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+**🛠️ Tech Stack**
+Framework: React
+Language: JavaScript
+Styling: CSS
+Routing: React Router
+API Handling: Axios
+Build Tool: Vite
 
-## React Compiler
+**✨ Core Features**
+--> Authentication (JWT-based login/signup)
+--> Add, update, and delete contacts
+--> View list of contacts with structured UI
+--> Form validation for user input
+--> Pagination for contacts
+--> Responsive design for mobile and desktop
+--> Integration with backend APIs
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+**🔗 API Integration**
+The application interacts with backend services using REST APIs:
 
-## Expanding the ESLint configuration
+GET /contacts → Retrieve contacts
+POST /contacts → Create contact
+PUT /contacts/:id → Update contact
+DELETE /contacts/:id → Delete contact
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+**📁 Project Structure**
+Markdownsrc/ ├── components/   # Reusable UI components ├── pages/        # Page-level components ├── services/     # API calls and business logic ├── assets/       # Static resources └── App.jsx``Show more lines
+
+🚀 Deployment
+The frontend can be deployed using:
+
+Vercel
+
+
+
+📈 Future Enhancements
+Export contacts (CSV/PDF)
+Dark mode UI
