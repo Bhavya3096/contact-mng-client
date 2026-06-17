@@ -26,7 +26,7 @@ const Register = () => {
 
         setServerErrors([])
 
-        axios.post('http://127.0.0.1:3000/contactmng/register', values)
+        axios.post('https://contact-mng-server.onrender.com/contactmng/register', values)
         .then(res => {
             toast.success("Account created Successfully", {
                 position: "top-right",

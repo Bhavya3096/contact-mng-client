@@ -42,7 +42,7 @@ const App = () => {
       return;
     }
 
-    axios.get('http://127.0.0.1:3000/contactmng/verify', {
+    axios.get('https://contact-mng-server.onrender.com/contactmng/verify', {
       headers: {
         Authorization: `Bearer ${token}`
       }

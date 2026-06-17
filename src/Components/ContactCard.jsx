@@ -7,7 +7,7 @@ const ContactCard = () => {
   useEffect(() => {
     const token = localStorage.getItem('token');
 
-    axios.get(`http://127.0.0.1:3000/contactmng/contacts/${id}`, {
+    axios.get(`https://contact-mng-server.onrender.com/contactmng/contacts/${id}`, {
       headers: {
         Authorization: `Bearer ${token}`
       }

@@ -48,7 +48,7 @@ const AddContact = () => {
     const token = localStorage.getItem('token');
 
     axios.post(
-      'http://127.0.0.1:3000/contactmng/add-contact',
+      'https://contact-mng-server.onrender.com/contactmng/add-contact',
       values,
       {
         headers: {

@@ -7,30 +7,21 @@ import { toast } from 'react-toastify'
 import { FaPhoneFlip, FaRegAddressCard, FaUserPlus, FaAt } from 'react-icons/fa6'
 
 const EditContact = () => {
-
-  // ✅ STATES
   const [values, setValues] = useState({
     name: '',
     email: '',
     phone: '',
     address: '',
   });
-
   const [errors, setErrors] = useState({});
   const [serverErrors, setServerErrors] = useState([]);
 
   const navigate = useNavigate();
   const { id } = useParams();
-
-  // ✅ INPUT HANDLER
   const handleInput = (event) => {
     setValues({ ...values, [event.target.name]: event.target.value });
-
-    // ✅ clear field error on typing
     setErrors({ ...errors, [event.target.name]: "" });
   };
-
-  // ✅ SUBMIT HANDLER (FIXED ✅)
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -44,7 +35,7 @@ const EditContact = () => {
     const token = localStorage.getItem('token');
 
     axios.put(
-      `http://127.0.0.1:3000/contactmng/update-contact/${id}`,
+      `https://contact-mng-server.onrender.com/contactmng/update-contact/${id}`,
       values,
       {
         headers: {
@@ -59,14 +50,14 @@ const EditContact = () => {
           autoClose: 3000,
         });
 
-        navigate('/dashboard'); // ✅ correct navigation
+        navigate('/dashboard'); 
       }
     })
     .catch(err => {
       console.log(err);
 
       if (err.response?.data?.message) {
-        toast.error(err.response.data.message); // ✅ duplicate email
+        toast.error(err.response.data.message);
       } else if (err.response?.data?.errors) {
         setServerErrors(err.response.data.errors);
       } else {
@@ -74,15 +65,11 @@ const EditContact = () => {
       }
     });
   };
-
-  // ✅ FETCH CONTACT DATA
   useEffect(() => {
-
     const token = localStorage.getItem('token');
     if (!token) return;
-
     axios.get(
-      `http://127.0.0.1:3000/contactmng/contacts/${id}`,
+      `https://contact-mng-server.onrender.com/contactmng/contacts/${id}`,
       {
         headers: {
           Authorization: `Bearer ${token}`
@@ -102,16 +89,12 @@ const EditContact = () => {
     .catch(err => {
       console.log(err);
     });
-
   }, [id]);
-
   return (
     <div className='add-form-container'>
       <form className='add-form' onSubmit={handleSubmit}>
 
         <h2>Edit Existing Contact</h2>
-
-        {/* ✅ NAME */}
         <div className='form-group'>
           <FaUserPlus />
           <input
@@ -123,8 +106,6 @@ const EditContact = () => {
           />
           {errors.name && <p className="error">{errors.name}</p>}
         </div>
-
-        {/* ✅ EMAIL */}
         <div className='form-group'>
           <FaAt />
           <input
@@ -137,7 +118,7 @@ const EditContact = () => {
           {errors.email && <p className="error">{errors.email}</p>}
         </div>
 
-        {/* ✅ PHONE */}
+        {/*  PHONE */}
         <div className='form-group'>
           <FaPhoneFlip />
           <input
@@ -154,7 +135,7 @@ const EditContact = () => {
           {errors.phone && <p className="error">{errors.phone}</p>}
         </div>
 
-        {/* ✅ ADDRESS */}
+        {/*  ADDRESS */}
         <div className='form-group'>
           <FaRegAddressCard />
           <input
@@ -166,7 +147,7 @@ const EditContact = () => {
           />
         </div>
 
-        {/* ✅ SERVER ERRORS */}
+        {/* SERVER ERRORS */}
         {
           serverErrors.length > 0 &&
           serverErrors.map((error, index) => (
