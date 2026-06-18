@@ -10,7 +10,7 @@ const Profile = () => {
     const token = localStorage.getItem('token');
     if (!token) return;
 
-    axios.get('https://contact-mng-server.onrender.com/contactmng/verify', {
+    axios.get(`${import.meta.env.VITE_API_BASE_URL}/contactmng/verify`, {
       headers: {
         Authorization: `Bearer ${token}`
       }

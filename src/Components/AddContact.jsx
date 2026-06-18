@@ -48,7 +48,7 @@ const AddContact = () => {
     const token = localStorage.getItem('token');
 
     axios.post(
-      'https://contact-mng-server.onrender.com/contactmng/add-contact',
+      `${import.meta.env.VITE_API_BASE_URL}/contactmng/add-contact`,
       values,
       {
         headers: {

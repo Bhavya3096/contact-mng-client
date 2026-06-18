@@ -127,7 +127,7 @@ const EditContact = () => {
             placeholder='Enter Phone Number'
             value={values.phone}
             onChange={(e) => {
-              const value = e.target.value.replace(/\D/g, ""); // ✅ allow only digits
+              const value = e.target.value.replace(/\D/g, ""); 
               setValues({ ...values, phone: value });
             }}
             maxLength={10}

@@ -26,7 +26,7 @@ const Register = () => {
 
         setServerErrors([])
 
-        axios.post('https://contact-mng-server.onrender.com/contactmng/register', values)
+        axios.post(`${import.meta.env.VITE_API_BASE_URL}/contactmng/register`, values)
         .then(res => {
             toast.success("Account created Successfully", {
                 position: "top-right",

@@ -28,7 +28,7 @@ const Contacts = () => {
       confirmButtonColor: '#3085d6',cancelButtonColor: '#d33',confirmButtonText: "Yes, Delete it!"
     }).then((result) => {
       if (result.isConfirmed) {
-        axios.delete(`https://contact-mng-server.onrender.com/contactmng/contacts/${id}`, {
+        axios.delete(`${import.meta.env.VITE_API_BASE_URL}/contactmng/contacts/${id}`, {
           headers: { Authorization: `Bearer ${token}` }})
         .then(() => {
           setContacts(prev => prev.filter(c => c._id !== id));
@@ -68,7 +68,7 @@ const Contacts = () => {
   const fetchNotes = (contactId) => {
   const token = localStorage.getItem('token');
 
-  axios.get(`https://contact-mng-server.onrender.com/contactmng/notes/${contactId}`, {
+  axios.get(`${import.meta.env.VITE_API_BASE_URL}/contactmng/notes/${contactId}`, {
     headers: { Authorization: `Bearer ${token}` }
   })
   .then(res => {
@@ -81,7 +81,7 @@ const Contacts = () => {
 const handleAddNote = () => {
   if (!note.trim()) return;
   const token = localStorage.getItem('token');
-  axios.post('https://contact-mng-server.onrender.com/contactmng/add-note', {
+  axios.post(`${import.meta.env.VITE_API_BASE_URL}/contactmng/add-note`, {
     contactId: selectedContact._id, note}, {
     headers: { Authorization: `Bearer ${token}` }
   }).then(() => {
@@ -94,7 +94,7 @@ const handleAddNote = () => {
     const token = localStorage.getItem('token');
     if (!token) return;
     setLoading(true);
-    axios.get('https://contact-mng-server.onrender.com/contactmng/contacts', {
+    axios.get(`${import.meta.env.VITE_API_BASE_URL}/contactmng/contacts`, {
       headers: {Authorization: `Bearer ${token}`}})
     .then((res) => { if (res.data.success) {setContacts(res.data.contacts || []);}
       setLoading(false);

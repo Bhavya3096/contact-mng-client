@@ -3,9 +3,9 @@ export default function Validation(values) {
 
     const email_pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     const password_pattern = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@$!%*?&#]).{8,}$/;
-    const phone_pattern = /^[0-9]{10}$/; // ✅ NEW
+    const phone_pattern = /^[0-9]{10}$/; 
 
-    // ✅ NAME (used in register + contact)
+    // NAME (used in register + contact)
     if (values?.name !== undefined) {
         if (values.name === "") {
             errors.name = "Name Should Not Be Empty"
@@ -14,16 +14,14 @@ export default function Validation(values) {
         }
     }
 
-    // ✅ EMAIL (used in all forms)
+    //  EMAIL (used in all forms)
     if (values?.email !== undefined) {
         if (values.email === "") {
             errors.email = "Email Should Not Be Empty"
-        } else if (!email_pattern.test(values.email)) { // ✅ UNCOMMENTED
+        } else if (!email_pattern.test(values.email)) { 
             errors.email = "Invalid Email Format"
         }
     }
-
-    // ✅ PASSWORD (only for login + register)
     if (values?.password !== undefined) {
         if (values.password === "") {
             errors.password = "Password Should Not Be Empty"

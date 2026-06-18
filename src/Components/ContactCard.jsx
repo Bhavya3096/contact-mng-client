@@ -7,7 +7,7 @@ const ContactCard = () => {
   useEffect(() => {
     const token = localStorage.getItem('token');
 
-    axios.get(`https://contact-mng-server.onrender.com/contactmng/contacts/${id}`, {
+    axios.get(`${import.meta.env.VITE_API_BASE_URL}/contactmng/contacts/${id}`, {
       headers: {
         Authorization: `Bearer ${token}`
       }
