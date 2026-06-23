@@ -29,7 +29,7 @@ const Login = () => {
 
         setServerErrors([])
 
-        axios.post(`${import.meta.env.VITE_API_BASE_URL}/contactmng/login`, values)
+        axios.post("https://contact-mng-server.onrender.com/contactmng/login",values)
         .then(res => {
             toast.success("Login Successfully", {
                 position: "top-right",
