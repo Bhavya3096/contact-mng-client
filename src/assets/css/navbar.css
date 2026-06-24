@@ -1,4 +1,4 @@
-*{
+/*{
     margin :0;
     padding: 0;
 }
@@ -58,4 +58,48 @@ padding: 2px;
 
   .navbar h1 {
     font-size: 20px;   }
+}*/
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 10px 20px;
+  background-color: rgb(237, 120, 183);
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  margin-left: 10px;
+  color: white;
+  text-decoration: none;
+}
+
+.navbar-right {
+  display: flex;
+  gap: 15px;
+}
+
+.navbar-link {
+  text-decoration: none;
+  color: black;
+}
+
+/* ✅ Mobile */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .navbar-right {
+    margin-top: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }

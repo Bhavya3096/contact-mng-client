@@ -1,33 +1,56 @@
-.home{
-    display: flex;
-    color: white;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 92vh;
-    padding-inline: 30px;
-   background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.4)), url("../img2.jpg");
+.home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 92vh;
+  text-align: center;
+  padding: 20px;
+  color: white;
 }
-.home-title{
-    font-size: 2rem;
-    margin-bottom: 10px;
-    word-spacing: 1%;
+
+.home-title {
+  font-size: 2rem;
 }
-.home-description{
-    font-size: 1.2rem;
-    margin-bottom: 20px;
+
+.home-description {
+  font-size: 1.2rem;
+}
+
+.home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  height: 100vh;
+  padding: 20px;
+  text-align: center;
+  color: white;
+
+  background-image: linear-gradient(
+      rgba(0,0,0,0.6),
+      rgba(0,0,0,0.4)
+    ),
+    url("../img2.jpg");
+
+  background-size: cover;
+  background-position: center;
 }
 @media (max-width: 768px) {
-  .home-container {
-    padding: 10px;
-    text-align: center;
-  }
-
-  .home-container h1 {
+  .home-title {
     font-size: 22px;
   }
 
-  .home-container p {
+  .home-description {
     font-size: 14px;
+  }
+}
+@media (max-width: 768px) {
+  .form-container,
+  .add-form-container,
+  .home {
+    background-position: center;
+    background-size: cover;  /* ✅ THIS FIXES MOBILE */
   }
 }

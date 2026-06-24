@@ -6,6 +6,7 @@ import Login from './Pages/Login';
 import { ToastContainer } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 import axios from 'axios';
+import './index.css';
 import Dashboard from './Pages/Dashboard';
 import Contacts from './Components/Contacts.jsx'
 import AddContact from './Components/AddContact.jsx';
@@ -13,8 +14,7 @@ import EditContact from './Components/EditContact.jsx'
 import Logout from './Components/Logout.jsx';
 import ProtectedRoutes from './Components/ProtectedRoutes.jsx';
 import ContactCard from './Components/ContactCard.jsx';
-import Profile from './Pages/Profile.jsx';
-
+import Profile from './Pages/Profile.jsx'
 export const UserContext = createContext(null);
 
 const router = createBrowserRouter([
