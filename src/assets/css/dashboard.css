@@ -1,6 +1,8 @@
 .dashboard{
     display: flex;
-    height: 90vh;
+ flex-wrap: wrap; 
+  gap: 20px;
+
 }
 
 .dashboard .sidebar-container{
@@ -14,7 +16,7 @@
 
 /*contacts*/
 .contact-list{
-    padding :20px 60px 0px 60px;
+    padding :20px;
     text-align: center;
 }
 .table-icon1,
@@ -28,4 +30,43 @@
 }
 .table-icon2{
     color: red;
+}
+@media (max-width: 768px) {
+  .dashboard {
+    flex-direction: column;   /* ✅ stack vertically */
+  }
+
+  .dashboard .sidebar-container {
+    width: 100%;
+    border-right: none;
+    border-bottom: 2px solid gray;
+  }
+
+  .dashboard .contact-container {
+    width: 100%;
+  }
+}
+@media (max-width: 768px) {
+
+  .form-container,
+  .add-form-container {
+    padding: 10px;
+  }
+
+  .form,
+  .add-form {
+    padding: 15px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  .form-group input {
+    font-size: 14px;
+  }
+
+  .contact-list {
+    padding: 10px;
+  }
 }

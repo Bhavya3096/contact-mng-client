@@ -5,10 +5,12 @@
 .navbar{
     display: flex;
     justify-content: space-between;
-    padding: 12px;
+    padding: 10px 20px;
+    align-items: center;
+    flex-wrap: wrap;
     background-color: rgb(237, 120, 183);
     color: black;
-    padding-inline: 45px;
+    padding-inline: 55px;
 }
 .navbar-left{
     display: flex;
@@ -17,19 +19,43 @@
 .navbar-brand{
     font-size: 1.8rem;
     margin-left: 40px;
-    margin-right: 10px;
+    margin-right: 5px;
     text-decoration: none;
     color: white;
 }
 .navbar-right{
 display: flex;
 align-items: center;
+padding: 2px;
 }
 .navbar-link{
-    color: black;
+    display: flex;
+    color:black;
     text-decoration: none;
-    margin-left: 20px;
+    padding: 2px;
 }
 .navbar-link:hover{
     text-decoration: underline;
+}
+@media (max-width: 768px) {
+
+  .navbar {
+    flex-direction: column; 
+    align-items: center;
+    text-align: center;
+  }
+
+  .nav-links {
+    margin-top: 10px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .nav-links a {
+    margin: 5px 10px;
+  }
+
+  .navbar h1 {
+    font-size: 20px;   }
 }

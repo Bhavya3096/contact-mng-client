@@ -17,3 +17,17 @@
     font-size: 1.2rem;
     margin-bottom: 20px;
 }
+@media (max-width: 768px) {
+  .home-container {
+    padding: 10px;
+    text-align: center;
+  }
+
+  .home-container h1 {
+    font-size: 22px;
+  }
+
+  .home-container p {
+    font-size: 14px;
+  }
+}
